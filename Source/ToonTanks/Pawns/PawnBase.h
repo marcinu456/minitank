@@ -9,6 +9,7 @@
 class UCapsuleComponent;
 class UStaticMeshComponent;
 class USceneComponent;
+class AProjectileBase;
 
 UCLASS()
 class TOONTANKS_API APawnBase : public APawn
@@ -17,7 +18,7 @@ class TOONTANKS_API APawnBase : public APawn
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
-	UCapsuleComponent* CampsuleComp;
+	UCapsuleComponent* CapsuleComp;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* BaseMesh;
@@ -26,7 +27,12 @@ private:
 	UStaticMeshComponent* TurretMesh;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	USceneComponent* ProjectileSpawnPoint;
+		USceneComponent* ProjectileSpawnPoint;
+
+	// VARIABLES
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
+		TSubclassOf<AProjectileBase> ProjectileClass;
+
 
 public:
 	// Sets default values for this pawn's properties
