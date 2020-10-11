@@ -26,5 +26,17 @@ APawnBase::APawnBase()
 
 }
 
+void APawnBase::RotateTurretFunction(FVector LookAtTarget)
+{
+}
+
+void APawnBase::Fire()
+{
+}
+
+void APawnBase::HandleDestruction()
+{
+}
+
 
 
